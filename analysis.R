@@ -18,7 +18,7 @@ data <- all_data%>%
   select(contains("Country"), Asylum.seekers)
 dim(data)
 
-country_of_interest <- "ESP"
+country_of_interest <- "USA"
 
 country_name <- countrycode(country_of_interest, origin = 'iso3c', destination = 'country.name')
 
@@ -31,7 +31,7 @@ country_data <- data%>%
 # From how many countries do asylum seekers come from (country of interest)?
 num_countries <- nrow(country_data)
 
-# How many people saught asylum in the country in 2020
+# How many people sought asylum in the country in 2020
 num_people <- country_data %>%
   summarise(total_people = sum(Asylum.seekers)) %>%
   pull()
