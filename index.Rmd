@@ -1,0 +1,22 @@
+---
+title: "Asylum Seeker Report"
+output: html_document
+---
+
+```{r include = FALSE}
+source("analysis.R")
+library(knitr)
+```
+
+This is a report about people seeking asylum in `r country_name`. There were `r num_people` that saught asylum from `r num_countries` countries. Here are the top countries:
+
+```{r echo=FALSE}
+kable(top_ten_countries, col.names = c("Country of Origin", "Number Asylum Seekers"))
+```
+
+Below is a map of where people came from around the globe.
+
+```{r echo=FALSE}
+asylum_map
+```
+
